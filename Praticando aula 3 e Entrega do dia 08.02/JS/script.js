@@ -63,5 +63,5 @@ if (valorTotal < 0) {
 } else if (valorTotal >= 1500 && assinante == "não") {
     valorDescontado = valorTotal - (valorTotal * descontoNivel5);
     alert("O valor descontado é" + " " + valorDescontado);
-} 
+}
 }
