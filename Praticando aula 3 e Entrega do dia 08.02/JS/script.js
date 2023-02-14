@@ -4,6 +4,7 @@ const descontoNivel2 = 0.10;
 const descontoNivel3 = 0.15;
 const descontoNivel4 = 0.25;
 const descontoNivel5 = 0.40;
+let valorDescontato;
 
 /* Desconto aplicado caso o usuario possua uma assinatura */
 const descontoAssinatura = 0.05;
@@ -18,41 +19,42 @@ if(assinante != "sim" && assinante != "não") {
 
 /* Usuario digita o valor total das suas compras */
 let valorTotal = prompt("Qual foi o valor da soma de todos os itens?");
+console.log(typeof valorTotal)
 
-/* Caso o usuario digitar um valor menor que 0, o sistema irar gerar um alert com o erro
-Pergunta: quando eu coloquei esse if la embaixo como else, o programa não me retornou com esse erro */
+/* Caso o usuario digitar um valor menor que 0, o sistema irar gerar um alert com o erro */
 if (valorTotal < 0) {
-    alert("O valor total que foi adicionado invalido, digite um numero valido");
-/* O if verifica se o valor é maior ou menor que 0 e menor que 150 e se o usuario é assinante ou não, caso sim, ele vai execultar a formula abaixo */
-} else if( valorTotal >= 0, valorTotal < 150 && assinante == "sim") {
+    alert("O valor total que foi adicionado invalido, não aceitamos numeros negativos");
+ 
+    /* O if verifica se o valor é maior ou menor que 0 e menor que 150 e se o usuario é assinante ou não, caso sim, ele vai execultar a formula abaixo */
+} else if( valorTotal >= 0 && valorTotal < 150 && assinante == "sim") {
     valorDescontado = valorTotal - (valorTotal * (descontoNivel1 + descontoAssinatura));
     alert("O valor descontado é" + " " + valorDescontado);
 
-} else if (valorTotal >= 0, valorTotal < 150 && assinante == "não") {
+} else if (valorTotal >= 0 && valorTotal < 150 && assinante == "não") {
     valorDescontado = valorTotal - (valorTotal * descontoNivel1);
     alert("O valor descontado é" + " " + valorDescontado);
 
-} else if (valorTotal >= 150, valorTotal < 300 && assinante == "sim") {
+} else if (valorTotal >= 150 && valorTotal < 300 && assinante == "sim") {
     valorDescontado = valorTotal - (valorTotal * (descontoNivel2 + descontoAssinatura));
     alert("O valor descontado é" + " " + valorDescontado);
 
-} else if (valorTotal >= 150, valorTotal < 300 && assinante == "não") {
+} else if (valorTotal >= 150 && valorTotal < 300 && assinante == "não") {
     valorDescontado = valorTotal - (valorTotal * descontoNivel2);
     alert("O valor descontado é" + " " + valorDescontado);
 
-} else if (valorTotal >= 300, valorTotal < 600 && assinante == "sim") {
+} else if (valorTotal >= 300 && valorTotal < 600 && assinante == "sim") {
     valorDescontado = valorTotal - (valorTotal * (descontoNivel3 + descontoAssinatura));
     alert("O valor descontado é" + " " + valorDescontado);
 
-} else if (valorTotal >= 300, valorTotal < 600 && assinante == "não") {
+} else if (valorTotal >= 300 && valorTotal < 600 && assinante == "não") {
     valorDescontado = valorTotal - (valorTotal * descontoNivel3);
     alert("O valor descontado é" + " " + valorDescontado);
 
-} else if (valorTotal >= 600, valorTotal < 1500 && assinante == "sim") {
+} else if (valorTotal >= 600 && valorTotal < 1500 && assinante == "sim") {
     valorDescontado = valorTotal - (valorTotal * (descontoNivel4 + descontoAssinatura));
     alert("O valor descontado é" + " " + valorDescontado);
 
-} else if (valorTotal >= 600, valorTotal < 1500 && assinante == "não") {
+} else if (valorTotal >= 600 && valorTotal < 1500 && assinante == "não") {
     valorDescontado = valorTotal - (valorTotal * descontoNivel4);
     alert("O valor descontado é" + " " + valorDescontado);
 
@@ -63,5 +65,9 @@ if (valorTotal < 0) {
 } else if (valorTotal >= 1500 && assinante == "não") {
     valorDescontado = valorTotal - (valorTotal * descontoNivel5);
     alert("O valor descontado é" + " " + valorDescontado);
+
+    /* Verifica se o dado colocado no promtp de valorTotal é uma string */
+} else if (typeof valorTotal === "string") {
+    alert("Por favor, só aceitamos numeros, não letras")
 }
 }
