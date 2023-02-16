@@ -4,9 +4,7 @@ function verificacaoDeDados (a,b,c,d) {
         return(a);
     } else if  (a > 10 || b > 10 || c > 10 || d > 10) {
         return(a);
-    } else if ( a === "string" || b === "string" || c === "string"  || d === "string" ) {
-        alert("Por favor, só digite numeros, não textos");
-    }
+    } 
 }
 
 function matematicaERedacaoPeso (a) {
