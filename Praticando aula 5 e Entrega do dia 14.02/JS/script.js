@@ -13,7 +13,7 @@ function matematicaERedacaoPeso (a) {
 }
 
 function portuguesECienciasPeso(c) {
-    d = c * 2
+    d = c * 2;
     return(d)
 }
 
@@ -24,7 +24,7 @@ function notaTotalPeso(a,b,c,d) {
 
 function resultado(a) {
     
-    if(a => 7) {
+    if(a >= 7) {
         alert("Passou, a sua nota foi " + a);
     } else {
         alert("Não Passou, a sua nota foi " + a);
